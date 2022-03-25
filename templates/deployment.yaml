@@ -31,8 +31,6 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-            - name: GOOGLE_APPLICATION_CREDENTIALS
-              value: /app/credentials.json
             - name: GOOGLE_PROJECT_ID
               value: {{ .Values.gcpProject }}
           ports:
